@@ -11,7 +11,26 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div class="container">
+            <div>
+                <p>INSERTAR MATERIAL</p>
+                <div class="mb-3">
+                    <label class="form-label">Descripcion Material</label>
+                    <asp:TextBox ID="TextBoxMaterialDesc" class="form-control" runat="server"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Marca</label>
+                    <asp:TextBox ID="TextBoxMarca" class="form-control" runat="server"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Presentacion</label>
+                    <asp:TextBox ID="TextBoxPresentacion" class="form-control" runat="server"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Id_tipo</label>
+                    <asp:TextBox ID="TextBoxIdTipo" class="form-control" runat="server"></asp:TextBox>
+                </div>
+            </div>
         </div>
     </form>
     <!-- JavaScript Bundle with Popper -->
