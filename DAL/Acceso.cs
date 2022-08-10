@@ -86,5 +86,26 @@ namespace DAL
             return respuesta;
         }
 
+        public SqlDataReader ConsultaObra()
+        {
+            SqlConnection conexion = new SqlConnection(Cadena);
+            conexion.Open();
+            SqlDataReader reader;
+            SqlCommand com = new SqlCommand();
+            com.Connection = conexion;
+            com.CommandText = @"SELECT
+            Nom_Obra AS 'Nombre de la obra',
+            Direccion,
+            Fecha_Inicio,
+            Fecha_Termino,
+            EncargadoObra.Nom_Encargado AS 'Nombre del encargado',
+            Dueno.Nombre_Dueno AS 'Nombre del dueño'
+            FROM Obra
+            INNER JOIN EncargadoObra on (Obra.ID_Encargado = EncargadoObra.ID_Encargado)
+            INNER JOIN Dueno on (Obra.ID_Dueno = Dueno.ID_Dueno)";
+            reader = com.ExecuteReader();
+            return reader;
+        }
+
     }
 }

@@ -32,5 +32,10 @@ namespace BL
         {
             return obj.InsertaObra(obra);
         }
+
+        public SqlDataReader ConsultarObra()
+        {
+            return obj.ConsultaObra();
+        }
     }
 }

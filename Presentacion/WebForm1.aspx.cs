@@ -97,5 +97,11 @@ namespace Presentacion
                 LabelRespuesta2.Text = ex.Message;
             }
         }
+
+        protected void btnMostrarObra_Click(object sender, EventArgs e)
+        {
+            GridView2.DataSource = objNeg.ConsultarObra();
+            GridView2.DataBind();
+        }
     }
 }
