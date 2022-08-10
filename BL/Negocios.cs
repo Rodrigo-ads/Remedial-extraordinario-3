@@ -27,5 +27,10 @@ namespace BL
         {
             return obj.MaterialesCons(idTipo);
         }
+
+        public string crear_Obra(Obra obra)
+        {
+            return obj.InsertaObra(obra);
+        }
     }
 }

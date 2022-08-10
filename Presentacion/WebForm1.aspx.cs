@@ -30,6 +30,27 @@ namespace Presentacion
                     });
                 }
 
+                DropDownListDueno.Items.Add("Seleccione el Dueño");
+                DropDownListEncargado.Items.Add("Seleeccione el Encargado");
+                SqlDataReader idDueno = objNeg.ObtenerTablas("Dueno");
+                while (idDueno.Read())
+                {
+                    DropDownListDueno.Items.Add(new ListItem()
+                    {
+                        Text = idDueno[1].ToString(),
+                        Value = idDueno[0].ToString()
+                    });
+                }
+
+                SqlDataReader idEncargado = objNeg.ObtenerTablas("EncargadoObra");
+                while (idEncargado.Read())
+                {
+                    DropDownListEncargado.Items.Add(new ListItem()
+                    {
+                        Text = idEncargado[1].ToString(),
+                        Value = idEncargado[0].ToString()
+                    });
+                }
             }
         }
 

@@ -33,12 +33,41 @@
                 </div>
                 <asp:Label ID="LabelRespuesta1" runat="server" Text="Label"></asp:Label>
                 <asp:Button ID="btnInsertarMaterial" class="btn btn-primary" runat="server" Text="Inserta Material" OnClick="btnInsertarMaterial_Click" />
+                <div>
+                    <p>Seleccione un ID_TIPO</p>
+                    <asp:DropDownList ID="dropIdTipo" runat="server" OnSelectedIndexChanged="dropIdTipo_SelectedIndexChanged"></asp:DropDownList>
+                    <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+                </div>
             </div>
             <div>
-                <p>Seleccione un ID_TIPO</p>
-                <asp:DropDownList ID="dropIdTipo" runat="server" OnSelectedIndexChanged="dropIdTipo_SelectedIndexChanged"></asp:DropDownList>
-                <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+                <p>INSERTA OBRA</p>
+                <div class="mb-3">
+                    <label class="form-label">Nombre de la obra</label>
+                    <asp:TextBox ID="TextBoxNombreObra" class="form-control" runat="server"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Direccion</label>
+                    <asp:TextBox ID="TextBoxObraDireccion" class="form-control" runat="server"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Fecha Inicio</label>
+                    <asp:TextBox ID="TextBoxObraInicio" type="date" class="form-control" runat="server"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Fecha Final</label>
+                    <asp:TextBox ID="TextBoxObraFinal" type="date" class="form-control" runat="server"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Dueño</label>
+                    <asp:DropDownList ID="DropDownListDueno" runat="server"></asp:DropDownList>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Encargado</label>
+                    <asp:DropDownList ID="DropDownListEncargado" runat="server"></asp:DropDownList>
+                </div>
+                <asp:Button ID="btnInsertaObra" runat="server" class="btn btn-primary" Text="Insertar obra" />
             </div>
+            
         </div>
     </form>
     <!-- JavaScript Bundle with Popper -->

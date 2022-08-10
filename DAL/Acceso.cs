@@ -66,5 +66,25 @@ namespace DAL
             reader = com.ExecuteReader();
             return reader;
         }
+
+        public string InsertaObra(Obra obra)
+        {
+            string respuesta = "";
+            SqlConnection conexion = new SqlConnection(Cadena);
+            conexion.Open();
+            SqlCommand com = new SqlCommand();
+            com.Connection = conexion;
+            com.Parameters.AddWithValue("@NomObra", obra.Nom_Obra);
+            com.Parameters.AddWithValue("@Direccion", obra.Direccion);
+            com.Parameters.AddWithValue("@FechaIni", obra.FechaInicio);
+            com.Parameters.AddWithValue("@FechaFin", obra.FechaFin);
+            com.Parameters.AddWithValue("@IDdueno", obra.Id_Dueno);
+            com.Parameters.AddWithValue("@IDEnca", obra.Id_Encargado);
+            com.CommandText = "INSERT INTO Obra VALUES (@NomObra, @Direccion, @FechaIni, @FechaFin, @IDdueno, @IDEnca);";
+            com.ExecuteNonQuery();
+            respuesta = "Se creó una nueva obra";
+            return respuesta;
+        }
+
     }
 }
