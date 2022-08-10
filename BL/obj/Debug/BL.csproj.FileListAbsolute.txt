@@ -1,0 +1,6 @@
+C:\sourceZarp\RemedialFINAL\RemedialFINAL\BL\bin\Debug\BL.dll
+C:\sourceZarp\RemedialFINAL\RemedialFINAL\BL\bin\Debug\BL.pdb
+C:\sourceZarp\RemedialFINAL\RemedialFINAL\BL\obj\Debug\BL.csproj.AssemblyReference.cache
+C:\sourceZarp\RemedialFINAL\RemedialFINAL\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\sourceZarp\RemedialFINAL\RemedialFINAL\BL\obj\Debug\BL.dll
+C:\sourceZarp\RemedialFINAL\RemedialFINAL\BL\obj\Debug\BL.pdb
