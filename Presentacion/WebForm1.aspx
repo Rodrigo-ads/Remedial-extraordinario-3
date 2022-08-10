@@ -14,6 +14,7 @@
         <div class="container">
             <div>
                 <p>INSERTAR MATERIAL</p>
+                
                 <div class="mb-3">
                     <label class="form-label">Descripcion Material</label>
                     <asp:TextBox ID="TextBoxMaterialDesc" class="form-control" runat="server"></asp:TextBox>
@@ -30,6 +31,8 @@
                     <label class="form-label">Id_tipo</label>
                     <asp:TextBox ID="TextBoxIdTipo" class="form-control" runat="server"></asp:TextBox>
                 </div>
+                <asp:Label ID="LabelRespuesta1" runat="server" Text="Label"></asp:Label>
+                <asp:Button ID="btnInsertarMaterial" class="btn btn-primary" runat="server" Text="Inserta Material" OnClick="btnInsertarMaterial_Click" />
             </div>
         </div>
     </form>

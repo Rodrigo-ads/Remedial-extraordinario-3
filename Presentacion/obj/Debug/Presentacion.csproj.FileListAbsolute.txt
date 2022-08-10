@@ -59,3 +59,7 @@ C:\sourceZarp\RemedialFINAL\RemedialFINAL\Presentacion\obj\Debug\Presentacion.cs
 C:\sourceZarp\RemedialFINAL\RemedialFINAL\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
 C:\sourceZarp\RemedialFINAL\RemedialFINAL\Presentacion\obj\Debug\Presentacion.dll
 C:\sourceZarp\RemedialFINAL\RemedialFINAL\Presentacion\obj\Debug\Presentacion.pdb
+C:\sourceZarp\RemedialFINAL\RemedialFINAL\Presentacion\bin\Entidades.dll
+C:\sourceZarp\RemedialFINAL\RemedialFINAL\Presentacion\bin\DAL.dll
+C:\sourceZarp\RemedialFINAL\RemedialFINAL\Presentacion\bin\Entidades.pdb
+C:\sourceZarp\RemedialFINAL\RemedialFINAL\Presentacion\bin\DAL.pdb

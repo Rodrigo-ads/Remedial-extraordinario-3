@@ -46,6 +46,9 @@
     <Reference Include="BL">
       <HintPath>..\BL\bin\Debug\BL.dll</HintPath>
     </Reference>
+    <Reference Include="Entidades">
+      <HintPath>..\Entidades\bin\Debug\Entidades.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />

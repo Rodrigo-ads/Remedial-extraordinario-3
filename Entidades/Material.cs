@@ -12,6 +12,6 @@ namespace Entidades
         public string Descripcion_Mat { set; get; }
         public string Marca { set; get; }
         public string Presentacion { set; get; }
-        public string Id_Tipo { set; get; }
+        public int Id_Tipo { set; get; }
     }
 }

@@ -4,3 +4,8 @@ C:\sourceZarp\RemedialFINAL\RemedialFINAL\BL\obj\Debug\BL.csproj.AssemblyReferen
 C:\sourceZarp\RemedialFINAL\RemedialFINAL\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
 C:\sourceZarp\RemedialFINAL\RemedialFINAL\BL\obj\Debug\BL.dll
 C:\sourceZarp\RemedialFINAL\RemedialFINAL\BL\obj\Debug\BL.pdb
+C:\sourceZarp\RemedialFINAL\RemedialFINAL\BL\bin\Debug\DAL.dll
+C:\sourceZarp\RemedialFINAL\RemedialFINAL\BL\bin\Debug\Entidades.dll
+C:\sourceZarp\RemedialFINAL\RemedialFINAL\BL\bin\Debug\DAL.pdb
+C:\sourceZarp\RemedialFINAL\RemedialFINAL\BL\bin\Debug\Entidades.pdb
+C:\sourceZarp\RemedialFINAL\RemedialFINAL\BL\obj\Debug\BL.csproj.CopyComplete
