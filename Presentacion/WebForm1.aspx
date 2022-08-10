@@ -76,6 +76,42 @@
             </div>
             <asp:GridView ID="GridView2" runat="server"></asp:GridView>
         </div>
+        <div>
+             <p>INSERTA PROVEEDOR DE MATERIAL OBRA</p>
+                <div class="mb-3">
+                    <label class="form-label">Recibido</label>
+                    <asp:TextBox ID="TextBoxProveRecibido" class="form-control" runat="server"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Entrega</label>
+                    <asp:TextBox ID="TextBoxProveEntrega" class="form-control" runat="server"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Cantidad</label>
+                    <asp:TextBox ID="TextBoxProveCantidad" class="form-control" runat="server"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Fecha Entre</label>
+                    <asp:TextBox ID="TextBoxProveFechaEntre" type="date" class="form-control" runat="server"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Precio</label>
+                    <asp:TextBox ID="TextBoxProvePrecio" type="date" class="form-control" runat="server"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Obra</label>
+                    <asp:DropDownList ID="DropDownListProveObra" runat="server"></asp:DropDownList>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Material</label>
+                    <asp:DropDownList ID="DropDownListProveMaterial" runat="server"></asp:DropDownList>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Proveedor</label>
+                    <asp:DropDownList ID="DropDownListProveProveedor" runat="server"></asp:DropDownList>
+                </div>
+            <asp:Button ID="btnInsertaProveeDeMateria" runat="server" class="btn btn-primary" Text="Insertar Proveedor de Materiales Obras" OnClick="btnInsertaProveeDeMateria_Click" />
+        </div>
     </form>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>

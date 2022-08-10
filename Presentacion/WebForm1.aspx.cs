@@ -15,12 +15,14 @@ namespace Presentacion
         Negocios objNeg = new Negocios();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 dropIdTipo.AutoPostBack = true;
                 DropDownListObra.AutoPostBack = true;
                 dropIdTipo.Items.Add("Seleccione un ID_TIPO");
+                DropDownListProveMaterial.Items.Add("Seleccione el Material");
                 SqlDataReader idTipo = objNeg.ObtenerTablas("Material");
+                SqlDataReader idMate = objNeg.ObtenerTablas("Material");
                 //dropIdTipo.Items.Clear();
                 while (idTipo.Read())
                 {
@@ -30,6 +32,13 @@ namespace Presentacion
                         Value = idTipo[0].ToString()
                     });
                 }
+                //while (idMate.Read()){
+                //    DropDownListObra.Items.Add(new ListItem()
+                //    {
+                //        Text = idMate[1].ToString(),
+                //        Value = idTipo[0].ToString()
+                //    });
+                //};
 
                 DropDownListDueno.Items.Add("Seleccione el Dueño");
                 DropDownListEncargado.Items.Add("Seleeccione el Encargado");
@@ -63,6 +72,19 @@ namespace Presentacion
                         Value = idObra[0].ToString()
                     });
                 }
+
+                DropDownListProveProveedor.Items.Add("Seleccione el Proveedor");
+                SqlDataReader idProve = objNeg.ObtenerTablas("Proveedor");
+                while (idProve.Read())
+                {
+                    DropDownListProveProveedor.Items.Add(new ListItem()
+                    {
+                        Text = idProve[1].ToString(),
+                        Value = idProve[0].ToString()
+                    });
+                }
+
+
             }
         }
 
@@ -121,6 +143,11 @@ namespace Presentacion
             objNeg.BorrarObras(Convert.ToInt32(DropDownListObra.SelectedValue));
             GridView2.DataSource = objNeg.ConsultarObra();
             GridView2.DataBind();
+        }
+
+        protected void btnInsertaProveeDeMateria_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

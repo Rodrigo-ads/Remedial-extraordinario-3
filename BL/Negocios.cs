@@ -42,5 +42,10 @@ namespace BL
         {
             return obj.DeleteObras(id);
         }
+
+        public string InsertaProveMaterial(ProveeMaterial ProMat)
+        {
+            return obj.InsertaProveDeMateriaObra(ProMat);
+        }
     }
 }

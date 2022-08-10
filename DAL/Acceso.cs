@@ -121,6 +121,25 @@ namespace DAL
             return respuesta;
         }
 
-
+        public string InsertaProveDeMateriaObra(ProveeMaterial proveeMaterial)
+        {
+            string respuesta = "";
+            SqlConnection conexion = new SqlConnection(Cadena);
+            conexion.Open();
+            SqlCommand com = new SqlCommand();
+            com.Connection = conexion;
+            com.Parameters.AddWithValue("@Recibio", proveeMaterial.Recibido);
+            com.Parameters.AddWithValue("@Entrega", proveeMaterial.Entrega);
+            com.Parameters.AddWithValue("@Cantidad", proveeMaterial.Cantidad);
+            com.Parameters.AddWithValue("@Fecha_Entre", proveeMaterial.Fecha_Entre);
+            com.Parameters.AddWithValue("@Precio", proveeMaterial.precio);
+            com.Parameters.AddWithValue("@IDObra", proveeMaterial.ID_Obra);
+            com.Parameters.AddWithValue("@IDMaterial", proveeMaterial.ID_Materia);
+            com.Parameters.AddWithValue("@IDProveedor", proveeMaterial.ID_Proveedor);
+            com.CommandText = "INSERT INTO Provee_De_Materi_Obra VALUES(@Recibio, @Entrega, @Cantidad, @Fecha_Entre, @Precio, @IDObra, @IDMaterial, @IDProveedor);";
+            com.ExecuteNonQuery();
+            respuesta = "Se creó un nuevo Proveedor de Material de Obras";
+            return respuesta;
+        }
     }
 }
