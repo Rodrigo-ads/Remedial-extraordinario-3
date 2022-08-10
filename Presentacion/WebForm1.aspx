@@ -65,7 +65,8 @@
                     <label class="form-label">Encargado</label>
                     <asp:DropDownList ID="DropDownListEncargado" runat="server"></asp:DropDownList>
                 </div>
-                <asp:Button ID="btnInsertaObra" runat="server" class="btn btn-primary" Text="Insertar obra" />
+                <asp:Label ID="LabelRespuesta2" runat="server" Text="Label"></asp:Label>
+                <asp:Button ID="btnInsertaObra" runat="server" class="btn btn-primary" Text="Insertar obra" OnClick="btnInsertaObra_Click" />
             </div>
             
         </div>

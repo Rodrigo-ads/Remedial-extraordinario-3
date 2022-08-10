@@ -77,5 +77,25 @@ namespace Presentacion
             GridView1.DataSource = objNeg.MaterialIdTipo(Convert.ToInt32(dropIdTipo.SelectedValue));
             GridView1.DataBind();
         }
+
+        protected void btnInsertaObra_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LabelRespuesta2.Text = objNeg.crear_Obra(new Obra()
+                {
+                    Nom_Obra = TextBoxNombreObra.Text,
+                    Direccion = TextBoxObraDireccion.Text,
+                    FechaInicio = TextBoxObraInicio.Text,
+                    FechaFin = TextBoxObraFinal.Text,
+                    Id_Dueno = Convert.ToInt32(DropDownListDueno.SelectedValue),
+                    Id_Encargado = Convert.ToInt32(DropDownListEncargado.SelectedValue)
+                }) ;
+            }
+            catch(Exception ex)
+            {
+                LabelRespuesta2.Text = ex.Message;
+            }
+        }
     }
 }
