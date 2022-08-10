@@ -24,6 +24,7 @@ namespace DAL
             SqlConnection conexion = new SqlConnection(Cadena);
             conexion.Open();
             SqlCommand com = new SqlCommand();
+            com.Connection = conexion;
             com.Parameters.AddWithValue("@Descripcion", material.Descripcion_Mat);
             com.Parameters.AddWithValue("@Marca", material.Marca);
             com.Parameters.AddWithValue("@Presentacion", material.Presentacion);
