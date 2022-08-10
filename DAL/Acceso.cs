@@ -35,5 +35,36 @@ namespace DAL
             return respuesta;
         }
 
+        public SqlDataReader Select(string table)
+        {
+            SqlConnection conexion = new SqlConnection(Cadena);
+            conexion.Open();
+            SqlDataReader reader;
+            SqlCommand com = new SqlCommand();
+            com.Connection = conexion;
+            com.CommandText = "select * from " + table;
+            reader = com.ExecuteReader();
+            return reader;
+        }
+
+        public SqlDataReader MaterialesCons(int id_Tipo)
+        {
+            SqlConnection conexion = new SqlConnection(Cadena);
+            conexion.Open();
+            SqlDataReader reader;
+            SqlCommand com = new SqlCommand();
+            com.Connection = conexion;
+            com.CommandText = @"SELECT
+            ID_Material,
+            Descripcion_Mat,
+            Marca,
+            Presentacion,
+            ID_Tipo
+            FROM Material
+            WHERE ID_Tipo = @idTipo";
+            com.Parameters.AddWithValue("@idTipo", id_Tipo);
+            reader = com.ExecuteReader();
+            return reader;
+        }
     }
 }

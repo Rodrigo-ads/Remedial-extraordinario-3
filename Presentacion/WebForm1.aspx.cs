@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BL;
 using Entidades;
+using System.Data.SqlClient;
 
 namespace Presentacion
 {
@@ -14,7 +15,22 @@ namespace Presentacion
         Negocios objNeg = new Negocios();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!IsPostBack)
+            {
+                dropIdTipo.AutoPostBack = true;
+                dropIdTipo.Items.Add("Seleccione un ID_TIPO");
+                SqlDataReader idTipo = objNeg.ObtenerTablas("Material");
+                //dropIdTipo.Items.Clear();
+                while (idTipo.Read())
+                {
+                    dropIdTipo.Items.Add(new ListItem()
+                    {
+                        Text = idTipo[4].ToString(),
+                        Value = idTipo[0].ToString()
+                    });
+                }
 
+            }
         }
 
         protected void btnInsertarMaterial_Click(object sender, EventArgs e)
@@ -33,6 +49,12 @@ namespace Presentacion
             {
                 LabelRespuesta1.Text = ex.Message;
             }
+        }
+
+        protected void dropIdTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridView1.DataSource = objNeg.MaterialIdTipo(Convert.ToInt32(dropIdTipo.SelectedValue));
+            GridView1.DataBind();
         }
     }
 }

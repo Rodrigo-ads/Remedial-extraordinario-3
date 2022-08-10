@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL;
 using Entidades;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace BL
 {
@@ -15,6 +17,15 @@ namespace BL
         public string crear_Material(Material material)
         {
             return obj.InsertaMaterial(material);
+        }
+        public SqlDataReader ObtenerTablas(string tabla)
+        {
+            return obj.Select(tabla);
+        }
+
+        public SqlDataReader MaterialIdTipo(int idTipo)
+        {
+            return obj.MaterialesCons(idTipo);
         }
     }
 }

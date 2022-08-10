@@ -34,6 +34,11 @@
                 <asp:Label ID="LabelRespuesta1" runat="server" Text="Label"></asp:Label>
                 <asp:Button ID="btnInsertarMaterial" class="btn btn-primary" runat="server" Text="Inserta Material" OnClick="btnInsertarMaterial_Click" />
             </div>
+            <div>
+                <p>Seleccione un ID_TIPO</p>
+                <asp:DropDownList ID="dropIdTipo" runat="server" OnSelectedIndexChanged="dropIdTipo_SelectedIndexChanged"></asp:DropDownList>
+                <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+            </div>
         </div>
     </form>
     <!-- JavaScript Bundle with Popper -->
