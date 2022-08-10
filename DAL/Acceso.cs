@@ -106,6 +106,21 @@ namespace DAL
             reader = com.ExecuteReader();
             return reader;
         }
+        public string DeleteObras(int id)
+        {
+            string respuesta = "";
+            SqlConnection conexion = new SqlConnection(Cadena);
+            conexion.Open();
+            SqlCommand com = new SqlCommand();
+            com.Connection = conexion;
+            com.Parameters.AddWithValue("@id", id);
+            com.CommandText = "delete from Obra where ID_Obra = @id";
+            com.ExecuteNonQuery();
+            respuesta = "Se eliminó un registro";
+            conexion.Close();
+            return respuesta;
+        }
+
 
     }
 }

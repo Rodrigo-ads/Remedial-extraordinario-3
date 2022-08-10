@@ -18,6 +18,7 @@ namespace Presentacion
             if(!IsPostBack)
             {
                 dropIdTipo.AutoPostBack = true;
+                DropDownListObra.AutoPostBack = true;
                 dropIdTipo.Items.Add("Seleccione un ID_TIPO");
                 SqlDataReader idTipo = objNeg.ObtenerTablas("Material");
                 //dropIdTipo.Items.Clear();
@@ -49,6 +50,17 @@ namespace Presentacion
                     {
                         Text = idEncargado[1].ToString(),
                         Value = idEncargado[0].ToString()
+                    });
+                }
+
+                DropDownListObra.Items.Add("Seleccione la obra");
+                SqlDataReader idObra = objNeg.ObtenerTablas("Obra");
+                while (idObra.Read())
+                {
+                    DropDownListObra.Items.Add(new ListItem()
+                    {
+                        Text = idObra[1].ToString(),
+                        Value = idObra[0].ToString()
                     });
                 }
             }
@@ -100,6 +112,13 @@ namespace Presentacion
 
         protected void btnMostrarObra_Click(object sender, EventArgs e)
         {
+            GridView2.DataSource = objNeg.ConsultarObra();
+            GridView2.DataBind();
+        }
+
+        protected void DropDownListObra_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            objNeg.BorrarObras(Convert.ToInt32(DropDownListObra.SelectedValue));
             GridView2.DataSource = objNeg.ConsultarObra();
             GridView2.DataBind();
         }

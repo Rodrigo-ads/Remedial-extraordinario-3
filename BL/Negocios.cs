@@ -37,5 +37,10 @@ namespace BL
         {
             return obj.ConsultaObra();
         }
+
+        public string BorrarObras(int id)
+        {
+            return obj.DeleteObras(id);
+        }
     }
 }

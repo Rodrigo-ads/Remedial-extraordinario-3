@@ -68,6 +68,11 @@
                 <asp:Label ID="LabelRespuesta2" runat="server" Text="Label"></asp:Label>
                 <asp:Button ID="btnInsertaObra" runat="server" class="btn btn-primary" Text="Insertar obra" OnClick="btnInsertaObra_Click" />
                 <asp:Button ID="btnMostrarObra" runat="server" Text="Mostrar Obras" OnClick="btnMostrarObra_Click" class="btn btn-primary"/>
+                <p>ELIMINAR OBRA</p>
+                <div class="mb-3">
+                    <label class="form-label">Seleccione la Obra</label>
+                    <asp:DropDownList ID="DropDownListObra" runat="server" OnSelectedIndexChanged="DropDownListObra_SelectedIndexChanged"></asp:DropDownList>
+                </div>
             </div>
             <asp:GridView ID="GridView2" runat="server"></asp:GridView>
         </div>
