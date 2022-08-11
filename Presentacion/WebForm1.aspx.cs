@@ -19,6 +19,7 @@ namespace Presentacion
             {
                 dropIdTipo.AutoPostBack = true;
                 DropDownListObra.AutoPostBack = true;
+                DropDownListProveObra.AutoPostBack = true;
                 dropIdTipo.Items.Add("Seleccione un ID_TIPO");
                 DropDownListProveMaterial.Items.Add("Seleccione el Material");
                 SqlDataReader idTipo = objNeg.ObtenerTablas("Material");
@@ -37,7 +38,7 @@ namespace Presentacion
                     DropDownListProveMaterial.Items.Add(new ListItem()
                     {
                         Text = idMate[1].ToString(),
-                        Value = idTipo[0].ToString()
+                        Value = idMate[0].ToString()
                     });
                 };
 
@@ -64,10 +65,16 @@ namespace Presentacion
                 }
 
                 DropDownListObra.Items.Add("Seleccione la obra");
+                DropDownListProveObra.Items.Add("Seleccione la obra");
                 SqlDataReader idObra = objNeg.ObtenerTablas("Obra");
                 while (idObra.Read())
                 {
                     DropDownListObra.Items.Add(new ListItem()
+                    {
+                        Text = idObra[1].ToString(),
+                        Value = idObra[0].ToString()
+                    });
+                    DropDownListProveObra.Items.Add(new ListItem()
                     {
                         Text = idObra[1].ToString(),
                         Value = idObra[0].ToString()
@@ -126,6 +133,7 @@ namespace Presentacion
                     Id_Dueno = Convert.ToInt32(DropDownListDueno.SelectedValue),
                     Id_Encargado = Convert.ToInt32(DropDownListEncargado.SelectedValue)
                 }) ;
+                Response.Redirect("WebForm1.aspx");
             }
             catch(Exception ex)
             {
@@ -137,7 +145,7 @@ namespace Presentacion
         {
             GridView2.DataSource = objNeg.ConsultarObra();
             GridView2.DataBind();
-            Response.Write("WebForm1.aspx");
+            
         }
 
         protected void DropDownListObra_SelectedIndexChanged(object sender, EventArgs e)
@@ -149,7 +157,25 @@ namespace Presentacion
 
         protected void btnInsertaProveeDeMateria_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                LabelRespueta4.Text = objNeg.InsertaProveMaterial(new ProveeMaterial()
+                {
+                    Recibido = TextBoxProveRecibido.Text,
+                    Entrega = TextBoxProveEntrega.Text,
+                    Cantidad = Convert.ToInt32(TextBoxProveCantidad.Text),
+                    Fecha_Entre = TextBoxProveFechaEntre.Text,
+                    precio = Convert.ToInt32(TextBoxProvePrecio.Text),
+                    ID_Obra = Convert.ToInt32(DropDownListProveObra.SelectedValue),
+                    ID_Materia = Convert.ToInt32(DropDownListProveMaterial.SelectedValue),
+                    ID_Proveedor = Convert.ToInt32(DropDownListProveProveedor.SelectedValue)
+                });
+                Response.Redirect("WebForm1.aspx");
+            }
+            catch(Exception ex)
+            {
+                LabelRespueta4.Text = ex.Message;
+            }
         }
     }
 }

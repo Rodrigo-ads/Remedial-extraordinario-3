@@ -96,7 +96,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Precio</label>
-                    <asp:TextBox ID="TextBoxProvePrecio" type="date" class="form-control" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxProvePrecio" class="form-control" runat="server"></asp:TextBox>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Obra</label>
@@ -110,7 +110,8 @@
                     <label class="form-label">Proveedor</label>
                     <asp:DropDownList ID="DropDownListProveProveedor" runat="server"></asp:DropDownList>
                 </div>
-            <asp:Button ID="btnInsertaProveeDeMateria" runat="server" class="btn btn-primary" Text="Insertar Proveedor de Materiales Obras" OnClick="btnInsertaProveeDeMateria_Click" />
+                <asp:Label ID="LabelRespueta4" CssClass="mb-3" runat="server" Text="Label"></asp:Label>
+                <asp:Button ID="btnInsertaProveeDeMateria" runat="server" class="btn btn-primary" Text="Insertar Proveedor de Materiales Obras" OnClick="btnInsertaProveeDeMateria_Click" />
         </div>
         </div>
         
