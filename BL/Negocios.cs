@@ -57,5 +57,15 @@ namespace BL
         {
             return obj.InsertaProveDeMateriaObra(ProMat);
         }
+
+        public SqlDataReader ConsultarProveeObra()
+        {
+            return obj.ConsultaProveDeMaterial();
+        }
+
+        public SqlDataReader ConsultarObraDueno(int id)
+        {
+            return obj.ConsultaObraParam(id);
+        }
     }
 }

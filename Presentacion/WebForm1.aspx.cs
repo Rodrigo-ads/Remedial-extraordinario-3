@@ -44,6 +44,7 @@ namespace Presentacion
 
                 DropDownListDueno.Items.Add("Seleccione el Dueño");
                 DropDownListEncargado.Items.Add("Seleeccione el Encargado");
+                ListBox1.Items.Add("Seleccione el Dueño");
                 SqlDataReader idDueno = objNeg.ObtenerTablas("Dueno");
                 while (idDueno.Read())
                 {
@@ -52,6 +53,12 @@ namespace Presentacion
                         Text = idDueno[1].ToString(),
                         Value = idDueno[0].ToString()
                     });
+                    ListBox1.Items.Add(new ListItem()
+                    {
+                        Text = idDueno[1].ToString(),
+                        Value = idDueno[0].ToString()
+                    });
+
                 }
 
                 SqlDataReader idEncargado = objNeg.ObtenerTablas("EncargadoObra");
@@ -92,6 +99,11 @@ namespace Presentacion
                     });
                 }
 
+                GridView3.DataSource = objNeg.ConsultarProveeObra();
+                GridView3.DataBind();
+
+                
+                
 
             }
         }
@@ -176,6 +188,28 @@ namespace Presentacion
             {
                 LabelRespueta4.Text = ex.Message;
             }
+        }
+
+        protected void GridView3_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+
+        }
+
+        protected void GridView3_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+
+        }
+
+        protected void GridView3_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
+        }
+
+        protected void btnObrasSelect_Click(object sender, EventArgs e)
+        {
+            int valorDueno = Convert.ToInt32(ListBox1.SelectedValue);
+            GridView4.DataSource = objNeg.ConsultarObraDueno(valorDueno);
+            GridView4.DataBind();
         }
     }
 }

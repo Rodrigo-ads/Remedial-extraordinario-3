@@ -106,6 +106,28 @@ namespace DAL
             reader = com.ExecuteReader();
             return reader;
         }
+
+        public SqlDataReader ConsultaObraParam(int id)
+        {
+            SqlConnection conexion = new SqlConnection(Cadena);
+            conexion.Open();
+            SqlDataReader reader;
+            SqlCommand com = new SqlCommand();
+            com.Connection = conexion;
+            com.CommandText = @"SELECT
+            Nom_Obra AS 'Nombre de la obra',
+            Direccion,
+            Fecha_Inicio,
+            Fecha_Termino,
+            EncargadoObra.Nom_Encargado AS 'Nombre del encargado',
+            Dueno.Nombre_Dueno AS 'Nombre del dueño'
+            FROM Obra
+            INNER JOIN EncargadoObra on (Obra.ID_Encargado = EncargadoObra.ID_Encargado)
+            INNER JOIN Dueno on (Obra.ID_Dueno = Dueno.ID_Dueno) WHERE Obra.ID_Dueno = @idDueno";
+            com.Parameters.AddWithValue("@idDueno", id);
+            reader = com.ExecuteReader();
+            return reader;
+        }
         public string DeleteObras(int id)
         {
             string respuesta = "";
@@ -140,6 +162,31 @@ namespace DAL
             com.ExecuteNonQuery();
             respuesta = "Se creó un nuevo Proveedor de Material de Obras";
             return respuesta;
+        }
+
+        public SqlDataReader ConsultaProveDeMaterial()
+        {
+            SqlConnection conexion = new SqlConnection(Cadena);
+            conexion.Open();
+            SqlDataReader reader;
+            SqlCommand com = new SqlCommand();
+            com.Connection = conexion;
+            com.CommandText = @"SELECT
+            Recibio,
+            Entrega,
+            Cantidad,
+            Fecha_Entre,
+            Precio,
+            Obra.Nom_Obra,
+            Material.Descripcion_Mat,
+            Proveedor.Razon
+            FROM
+            Provee_De_Materi_Obra
+            INNER JOIN Proveedor on (Provee_De_Materi_Obra.ID_Proveedor = Proveedor.ID_Proveedor)
+            INNER JOIN Obra on (Obra.ID_Obra = Provee_De_Materi_Obra.ID_Obra)
+            INNER JOIN Material on (Material.ID_Material = Provee_De_Materi_Obra.ID_Material)";
+            reader = com.ExecuteReader();
+            return reader;
         }
     }
 }

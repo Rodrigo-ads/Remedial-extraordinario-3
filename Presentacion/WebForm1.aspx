@@ -112,7 +112,17 @@
                 </div>
                 <asp:Label ID="LabelRespueta4" CssClass="mb-3" runat="server" Text="Label"></asp:Label>
                 <asp:Button ID="btnInsertaProveeDeMateria" runat="server" class="btn btn-primary" Text="Insertar Proveedor de Materiales Obras" OnClick="btnInsertaProveeDeMateria_Click" />
-        </div>
+                <div class="mb-3">
+                    <asp:GridView ID="GridView3" runat="server" OnRowDeleting="GridView3_RowDeleting" OnRowEditing="GridView3_RowEditing" OnRowUpdating="GridView3_RowUpdating"></asp:GridView>
+                </div>
+            </div>
+            <div>
+                <div class="mb-3">
+                    <asp:ListBox ID="ListBox1" runat="server"></asp:ListBox>
+                    <asp:Button ID="btnObrasSelect" runat="server" class="btn btn-primary" Width="84px" Text="Seleccionar obra" OnClick="btnObrasSelect_Click" />
+                </div>
+                <asp:GridView ID="GridView4" runat="server"></asp:GridView>
+            </div>
         </div>
         
     </form>
