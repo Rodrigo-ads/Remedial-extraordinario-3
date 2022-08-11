@@ -7,12 +7,12 @@ C:\Users\Yulio64neos\source\repos\RemedialFINAL\DAL\obj\Debug\DAL.csproj.CoreCom
 C:\Users\Yulio64neos\source\repos\RemedialFINAL\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\Yulio64neos\source\repos\RemedialFINAL\DAL\obj\Debug\DAL.dll
 C:\Users\Yulio64neos\source\repos\RemedialFINAL\DAL\obj\Debug\DAL.pdb
-C:\sourceZarp\RemedialFINAL\RemedialFINAL\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
-C:\sourceZarp\RemedialFINAL\RemedialFINAL\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
-C:\sourceZarp\RemedialFINAL\RemedialFINAL\DAL\obj\Debug\DAL.dll
-C:\sourceZarp\RemedialFINAL\RemedialFINAL\DAL\obj\Debug\DAL.pdb
 C:\sourceZarp\RemedialFINAL\RemedialFINAL\DAL\bin\Debug\DAL.dll
 C:\sourceZarp\RemedialFINAL\RemedialFINAL\DAL\bin\Debug\DAL.pdb
 C:\sourceZarp\RemedialFINAL\RemedialFINAL\DAL\bin\Debug\Entidades.dll
 C:\sourceZarp\RemedialFINAL\RemedialFINAL\DAL\bin\Debug\Entidades.pdb
+C:\sourceZarp\RemedialFINAL\RemedialFINAL\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\sourceZarp\RemedialFINAL\RemedialFINAL\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\sourceZarp\RemedialFINAL\RemedialFINAL\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\sourceZarp\RemedialFINAL\RemedialFINAL\DAL\obj\Debug\DAL.dll
+C:\sourceZarp\RemedialFINAL\RemedialFINAL\DAL\obj\Debug\DAL.pdb

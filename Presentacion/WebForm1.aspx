@@ -70,13 +70,13 @@
                 <asp:Button ID="btnMostrarObra" runat="server" Text="Mostrar Obras" OnClick="btnMostrarObra_Click" class="btn btn-primary"/>
                 <p>ELIMINAR OBRA</p>
                 <div class="mb-3">
+                    <asp:Label ID="Respuesta3" runat="server" Text="Mensaje" CssClass="mb-3"></asp:Label>
                     <label class="form-label">Seleccione la Obra</label>
                     <asp:DropDownList ID="DropDownListObra" runat="server" OnSelectedIndexChanged="DropDownListObra_SelectedIndexChanged"></asp:DropDownList>
                 </div>
             </div>
             <asp:GridView ID="GridView2" runat="server"></asp:GridView>
-        </div>
-        <div>
+            <div>
              <p>INSERTA PROVEEDOR DE MATERIAL OBRA</p>
                 <div class="mb-3">
                     <label class="form-label">Recibido</label>
@@ -112,6 +112,8 @@
                 </div>
             <asp:Button ID="btnInsertaProveeDeMateria" runat="server" class="btn btn-primary" Text="Insertar Proveedor de Materiales Obras" OnClick="btnInsertaProveeDeMateria_Click" />
         </div>
+        </div>
+        
     </form>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>

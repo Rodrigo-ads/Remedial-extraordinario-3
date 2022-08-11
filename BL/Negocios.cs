@@ -40,7 +40,17 @@ namespace BL
 
         public string BorrarObras(int id)
         {
-            return obj.DeleteObras(id);
+            string alerta = "";
+            try
+            {
+                return obj.DeleteObras(id);
+                alerta = "Se ha borrado correctamente " + id;
+            }
+            catch (Exception ex)
+            {
+                alerta = "No se puede borrar";
+            }
+            return alerta;
         }
 
         public string InsertaProveMaterial(ProveeMaterial ProMat)

@@ -32,13 +32,14 @@ namespace Presentacion
                         Value = idTipo[0].ToString()
                     });
                 }
-                //while (idMate.Read()){
-                //    DropDownListObra.Items.Add(new ListItem()
-                //    {
-                //        Text = idMate[1].ToString(),
-                //        Value = idTipo[0].ToString()
-                //    });
-                //};
+                while (idMate.Read())
+                {
+                    DropDownListProveMaterial.Items.Add(new ListItem()
+                    {
+                        Text = idMate[1].ToString(),
+                        Value = idTipo[0].ToString()
+                    });
+                };
 
                 DropDownListDueno.Items.Add("Seleccione el Dueño");
                 DropDownListEncargado.Items.Add("Seleeccione el Encargado");
@@ -136,11 +137,12 @@ namespace Presentacion
         {
             GridView2.DataSource = objNeg.ConsultarObra();
             GridView2.DataBind();
+            Response.Write("WebForm1.aspx");
         }
 
         protected void DropDownListObra_SelectedIndexChanged(object sender, EventArgs e)
         {
-            objNeg.BorrarObras(Convert.ToInt32(DropDownListObra.SelectedValue));
+            Respuesta3.Text = objNeg.BorrarObras(Convert.ToInt32(DropDownListObra.SelectedValue));
             GridView2.DataSource = objNeg.ConsultarObra();
             GridView2.DataBind();
         }

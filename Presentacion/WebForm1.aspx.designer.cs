@@ -177,6 +177,15 @@ namespace Presentacion
         protected global::System.Web.UI.WebControls.Button btnMostrarObra;
 
         /// <summary>
+        /// Control Respuesta3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Respuesta3;
+
+        /// <summary>
         /// Control DropDownListObra.
         /// </summary>
         /// <remarks>
